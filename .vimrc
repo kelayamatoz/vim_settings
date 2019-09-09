@@ -1,5 +1,3 @@
-execute pathogen#infect()
-filetype plugin indent on
 syntax on
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -41,10 +39,6 @@ set incsearch
 " set line numbers
 set nu
 
-" set 256 color for vim and use zenburn font
-set t_Co=256
-colors zenburn
-
 " set python specific things
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -57,7 +51,13 @@ au BufNewFile,BufRead *.py
 let python_highlight_all=1
 syntax on
 
-" set nerdtree things
-map <C-n> :NERDTreeToggle<CR>
-
-" trying to fix tmux line...
+" set scala specific things
+au BufNewFile,BufRead *.scala
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+syntax on
